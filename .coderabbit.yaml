@@ -1,0 +1,25 @@
+language: en-US
+early_access: true
+tone_instructions: "Be concise. Cite line numbers. Skip preamble."
+reviews:
+  profile: assertive
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+  path_instructions:
+    - path: "src/**/*.py"
+      instructions: "Apply PEP 8. Flag bare except, missing type hints, unused imports, shell=True without input validation, mutable default arguments."
+  path_filters:
+    - "!**/*.md"
+  pre_merge_checks:
+    docstrings:
+      mode: warning
+chat:
+  auto_reply: true
